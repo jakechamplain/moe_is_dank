@@ -35,7 +35,7 @@ $(TARGET).bc: $(C_OBJ) $(CXX_OBJ)
 
 %.bc: %.cpp
 	$(CXX) $(CFLAGS) -emit-llvm -c $< -o $@
-	
+
 clean:
 	rm -rf *.bc
 	rm -rf $(TARGET)
