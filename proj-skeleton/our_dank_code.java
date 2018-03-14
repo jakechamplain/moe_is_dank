@@ -1,8 +1,12 @@
 
 public class Main {
 
-  public static void main(String[] callGraph) {
-    
+  public static void main(String[] args) {
+	printf("I am in our dank code");
+	for(int i=0; i<args.length; i++){
+		printf(i + " " + args[i]);
+	}
+
 
 
 

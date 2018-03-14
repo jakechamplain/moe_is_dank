@@ -13,9 +13,11 @@ CFLAGS=-g
 CXXFLAGS="$(CFLAGS)"
 
 all:
-	$(TARGET): dankMoe:OUTPUT HERE
+	#$(OPT) -print-callgraph 2>&1 >/dockerdata/dankProject/proj-skeleton | /dockerdata/dankProject/proj-skeleton/pipair.mak $@
+	#dankMoe:OUTPUT HERE
 	
 include pipair.mak
+#include	our_dank_code.java
 
 # LLVM binaries
 CC=$(PREFIX)clang
@@ -24,19 +26,24 @@ LINK=$(PREFIX)llvm-link
 OPT=$(PREFIX)opt
 
 $(TARGET): $(TARGET).bc
+	#$(OPT) -print-callgraph 2>&1 >/dockerdata/dankProject/proj-skeleton | /dockerdata/dankProject/proj-skeleton/pipair.mak $@
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 $(TARGET).bc: $(C_OBJ) $(CXX_OBJ)
+	#$(OPT) -print-callgraph 2>&1 >/dockerdata/dankProject/proj-skeleton | /dockerdata/dankProject/proj-skeleton/pipair.mak $@
 	$(LINK) -v $(C_OBJ) $(CXX_OBJ) -o $@
 
 %.bc: %.c
+	#$(OPT) -print-callgraph 2>&1 >/dockerdata/dankProject/proj-skeleton | /dockerdata/dankProject/proj-skeleton/pipair.mak $@
 	$(CC) $(CFLAGS) -emit-llvm -c $< -o $@ 
 	$(OPT) -analyze -dot-callgraph
 
 %.bc: %.cpp
+	#$(OPT) -print-callgraph 2>&1 >/dockerdata/dankProject/proj-skeleton | /dockerdata/dankProject/proj-skeleton/pipair.mak $@
 	$(CXX) $(CFLAGS) -emit-llvm -c $< -o $@
 	
 clean:
+	#$(OPT) -print-callgraph 2>&1 >/dockerdata/dankProject/proj-skeleton | /dockerdata/dankProject/proj-skeleton/pipair.mak $@
 	rm -rf *.bc
 	rm -rf $(TARGET)
 	rm -rf $(TARGET)_*_*.out
