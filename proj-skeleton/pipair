@@ -2,8 +2,8 @@
 
 echo "hello"
 if [ -z "$2" ]; then
-	opt -print-callgraph  $1 2>&1 >/dev/null |../pipairBinary 3 65
+	opt -print-callgraph  $1 2>&1 >/dev/null |./pipairBinary 3 65
 	exit 0
 else
-	opt -print-callgraph $1 2>&1 >/dev/null |../pipairBinary $2 $3
+	opt -print-callgraph $1 2>&1 >/dev/null |./pipairBinary $2 $3
 fi

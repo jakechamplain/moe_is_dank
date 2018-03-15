@@ -23,7 +23,7 @@ CLASSES = \
 CLASS_FILES=$(CLASSES:$(SRC)/%.java=$(BIN)/%.class)
 
 all:	
-	$(CXX) $(CFLAGS) -emit-llvm -c pipair.c -o pipairBinary
+	$(CC) $(CFLAGS) -emit-llvm -c pipair.c -o pipairBinary
 	./pipair
 	
 include pipair.mak
