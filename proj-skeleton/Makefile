@@ -23,15 +23,11 @@ CLASSES = \
 CLASS_FILES=$(CLASSES:$(SRC)/%.java=$(BIN)/%.class)
 
 all:	
-	$(CXX) pipair.c -o pipairCode
-	
-	#mkdir -p $(BIN)
-	#$(JC) $(JFLAGS) $(CLASSES)
-	#$(OPT) -print-callgraph 2>&1 >/dockerdata/dankProject/proj-skeleton | /dockerdata/dankProject/proj-skeleton/pipair.mak $@
-	#OUTPUT HERE
+	#$(CC) $(CFLAGS) -emit-llvm -c pipair.c -o pipair 
+	$(CXX) -c pipair.c -o pipair	
+	#./pipair
 	
 include pipair.mak
-#include	our_dank_code.java
 
 # LLVM binaries
 CC=$(PREFIX)clang
@@ -40,26 +36,19 @@ LINK=$(PREFIX)llvm-link
 OPT=$(PREFIX)opt
 
 $(TARGET): $(TARGET).bc
-	#$(OPT) -print-callgraph 2>&1 >/dockerdata/dankProject/proj-skeleton | /dockerdata/dankProject/proj-skeleton/pipair.mak $@
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 $(TARGET).bc: $(C_OBJ) $(CXX_OBJ)
-	#$(OPT) -print-callgraph 2>&1 >/dockerdata/dankProject/proj-skeleton | /dockerdata/dankProject/proj-skeleton/pipair.mak $@
 	$(LINK) -v $(C_OBJ) $(CXX_OBJ) -o $@
 
 %.bc: %.c
-	#$(OPT) -print-callgraph 2>&1 >/dockerdata/dankProject/proj-skeleton | /dockerdata/dankProject/proj-skeleton/pipair.mak $@
 	$(CC) $(CFLAGS) -emit-llvm -c $< -o $@ 
-	$(OPT) -analyze -dot-callgraph
 
 %.bc: %.cpp
-	#$(OPT) -print-callgraph 2>&1 >/dockerdata/dankProject/proj-skeleton | /dockerdata/dankProject/proj-skeleton/pipair.mak $@
 	$(CXX) $(CFLAGS) -emit-llvm -c $< -o $@
 	
 clean:
 	rm -f pipairCode
-	#$(OPT) -print-callgraph 2>&1 >/dockerdata/dankProject/proj-skeleton | /dockerdata/dankProject/proj-skeleton/pipair.mak $@
-	#rm $(BIN)/*.class
 	rm -rf *.bc
 	rm -rf $(TARGET)
 	rm -rf $(TARGET)_*_*.out

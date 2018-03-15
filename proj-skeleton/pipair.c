@@ -1,16 +1,4 @@
-#include <string>
-#include <iostream>
-#include <istream>
-#include <ostream>
-#include <iterator>
 #include <cstdlib>
-#include <sstream>
-#include <algorithm>
-#include <iterator>
-#include <vector>
-#include <map>
-#include <set>
-#include <utility>
 #include <stdio.h>
 
 int main (int argc, char* argv[]) {
