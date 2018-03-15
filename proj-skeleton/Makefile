@@ -23,7 +23,9 @@ CLASSES = \
 CLASS_FILES=$(CLASSES:$(SRC)/%.java=$(BIN)/%.class)
 
 all:	
-	$(CC) $(CFLAGS) -emit-llvm -c pipair.c -o pipairBinary
+	$(CC) pipair.c -o pipairBinary.bc 
+	#so either we have to compile it into binary executable (this above) or to bitcode (this below). however, the pdf says "You can implement pipair as an executable binary, or you can implement pipair as a bash script." so let's go with the binary 
+	#$(CC) $(CFLAGS) -emit-llvm -c pipair.c -o pipairBinary.bc
 	./pipair
 	
 include pipair.mak
@@ -47,7 +49,7 @@ $(TARGET).bc: $(C_OBJ) $(CXX_OBJ)
 	$(CXX) $(CFLAGS) -emit-llvm -c $< -o $@
 	
 clean:
-	rm -f pipairCode
+	rm -f pipairbinary.bc
 	rm -rf *.bc
 	rm -rf $(TARGET)
 	rm -rf $(TARGET)_*_*.out
