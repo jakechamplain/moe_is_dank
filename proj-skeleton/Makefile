@@ -12,9 +12,23 @@ CXX_OBJ=$(CXX_SRC:.cpp=.bc)
 CFLAGS=-g
 CXXFLAGS="$(CFLAGS)"
 
-all:
+#stuff for java
+SRC = ./src
+BIN = ./bin
+JC = javac
+JFLAGS = -d $(BIN)
+CLASSES = \
+	$(SRC)/Main.java \
+	
+CLASS_FILES=$(CLASSES:$(SRC)/%.java=$(BIN)/%.class)
+
+all:	
+	$(CXX) pipair.c -o pipairCode
+	
+	#mkdir -p $(BIN)
+	#$(JC) $(JFLAGS) $(CLASSES)
 	#$(OPT) -print-callgraph 2>&1 >/dockerdata/dankProject/proj-skeleton | /dockerdata/dankProject/proj-skeleton/pipair.mak $@
-	#dankMoe:OUTPUT HERE
+	#OUTPUT HERE
 	
 include pipair.mak
 #include	our_dank_code.java
@@ -43,7 +57,9 @@ $(TARGET).bc: $(C_OBJ) $(CXX_OBJ)
 	$(CXX) $(CFLAGS) -emit-llvm -c $< -o $@
 	
 clean:
+	rm -f pipairCode
 	#$(OPT) -print-callgraph 2>&1 >/dockerdata/dankProject/proj-skeleton | /dockerdata/dankProject/proj-skeleton/pipair.mak $@
+	#rm $(BIN)/*.class
 	rm -rf *.bc
 	rm -rf $(TARGET)
 	rm -rf $(TARGET)_*_*.out
