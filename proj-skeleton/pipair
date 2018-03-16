@@ -1,9 +1,0 @@
-#!/bin/bash
-
-echo "hello"
-if [ -z "$2" ]; then
-	opt -print-callgraph  $1 2>&1 >/dev/null |  ./pipairBinary.bc 3 65
-	exit 0
-else
-	opt -print-callgraph $1 2>&1 >/dev/null | ./pipairBinary.bc $2 $3
-fi
