@@ -2,4 +2,4 @@ hello i have this:
 test2.bc
 
 
-callgraph je 3Support je 1440327768Confidence je 1440327770
+Support is 3Confidence is 65'main'<<0x8e5740>>'scope1''scope2''scope3''scope4''scope5''scope6''scope5'<<0x8ee630>>'B''D''A''scope1'<<0x8e57e0>>'A''B''C''D''scope2'<<0x8e5880>>'A''C''D''scope3'<<0x8e5810>>'A''B''scope4'<<0x8e58b0>>'B''D''scope1''scope6'<<0x8ee560>>'B''D''A'<<0x8e5770>>'printf''printf'<<0x8eea70>>'B'<<0x8ee820>>'printf''C'<<0x8ee7b0>>'printf''D'<<0x8ee9b0>>'printf'
