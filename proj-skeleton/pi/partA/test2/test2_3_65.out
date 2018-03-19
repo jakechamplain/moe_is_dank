@@ -1,5 +1,16 @@
-hello i have this: 
-test2.bc
-
-
-Support is 3Confidence is 65'main'<<0x8e5740>>'scope1''scope2''scope3''scope4''scope5''scope6''scope5'<<0x8ee630>>'B''D''A''scope1'<<0x8e57e0>>'A''B''C''D''scope2'<<0x8e5880>>'A''C''D''scope3'<<0x8e5810>>'A''B''scope4'<<0x8e58b0>>'B''D''scope1''scope6'<<0x8ee560>>'B''D''A'<<0x8e5770>>'printf''printf'<<0x8eea70>>'B'<<0x8ee820>>'printf''C'<<0x8ee7b0>>'printf''D'<<0x8ee9b0>>'printf'
+bug: 'D' in 'B', pair: ('D', 'A'), support: 6, confidence: 100.00%
+bug: 'A' in 'B', pair: ('A', 'D'), support: 6, confidence: 100.00%
+bug: 'B' in 'C', pair: ('B', 'D'), support: 6, confidence: 100.00%
+bug: 'B' in 'C', pair: ('B', 'A'), support: 4, confidence: 100.00%
+bug: 'D' in 'C', pair: ('D', 'B'), support: 6, confidence: 100.00%
+bug: 'D' in 'C', pair: ('D', 'A'), support: 6, confidence: 100.00%
+bug: 'A' in 'C', pair: ('A', 'B'), support: 4, confidence: 100.00%
+bug: 'A' in 'C', pair: ('A', 'D'), support: 6, confidence: 100.00%
+bug: 'D' in scope3, pair: ('D', 'A'), support: 6, confidence: 100.00%
+bug: 'A' in scope3, pair: ('A', 'D'), support: 6, confidence: 100.00%
+bug: 'B' in scope4, pair: ('B', 'A'), support: 4, confidence: 100.00%
+bug: 'A' in scope4, pair: ('A', 'B'), support: 4, confidence: 100.00%
+bug: 'B' in scope6, pair: ('B', 'D'), support: 6, confidence: 100.00%
+bug: 'D' in scope6, pair: ('D', 'B'), support: 6, confidence: 100.00%
+bug: 'B' in A, pair: ('B', 'D'), support: 6, confidence: 100.00%
+bug: 'D' in A, pair: ('D', 'B'), support: 6, confidence: 100.00%

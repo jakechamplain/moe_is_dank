@@ -1,5 +1,0 @@
-hello i have this: 
-test2.bc
-10
-80
-Support is 10Confidence is 80'main'<<0x13a9740>>'scope1''scope2''scope3''scope4''scope5''scope6''scope5'<<0x13b2630>>'B''D''A''scope1'<<0x13a97e0>>'A''B''C''D''scope2'<<0x13a9880>>'A''C''D''scope3'<<0x13a9810>>'A''B''scope4'<<0x13a98b0>>'B''D''scope1''scope6'<<0x13b2560>>'B''D''A'<<0x13a9770>>'printf''printf'<<0x13b2850>>'B'<<0x13b2820>>'printf''C'<<0x13b27b0>>'printf''D'<<0x13b29b0>>'printf'

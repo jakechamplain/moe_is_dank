@@ -1,9 +1,5 @@
 #!/bin/bash
 
-echo "hello i have this: "
-echo "$1"
-echo "$2"
-echo "$3"
 if [ -z "$2" ]; then
 	opt -print-callgraph  $1 2>&1 >/dev/null |  ../pipairBinary 3 65
 	exit 0
