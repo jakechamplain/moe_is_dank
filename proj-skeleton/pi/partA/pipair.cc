@@ -33,9 +33,9 @@ int hashStringToInt (string str){
 		return hashInt[str];
 	}
 	else{
+		hashNumber++;
 		hashInt[str] = hashNumber;
 		hashString[hashNumber] = str;
-		hashNumber++;
 		return hashNumber;
 	}	
 }
@@ -82,7 +82,7 @@ int main (int argc, char* argv[]) {
 			  words.push_back(word);
 			}
 		}		
-			
+		//printf("%s\n",line.c_str());	
 		//parsing the input callgraph from opt and inserting it to our map representation of it	
 		//scope line
 		if(words.size() == 7){
@@ -93,6 +93,7 @@ int main (int argc, char* argv[]) {
 			scope = scope.substr(first+1, last-first-1);
 			scopeInt = hashStringToInt(scope);
 			//std::cout << scope;
+			//printf("%s\n",hashIntToString(scopeInt).c_str());
 		}
 		//method in the scope
 		else if (words.size() == 4){
@@ -109,8 +110,9 @@ int main (int argc, char* argv[]) {
 			
 			// add scope and method to callgraph
 			callGraph[scopeInt].insert(methodInt);
+			//printf("%s, %s\n",scope.c_str(), hashIntToString(methodInt).c_str());
 		}
-		//std::cout << line << std::endl;//outprint line to test it
+		//std::cout << line// << std::endl;//outprint line to test it
 		
 		
 	}
@@ -150,6 +152,24 @@ int main (int argc, char* argv[]) {
 		
 		it++;
 	}
+	
+	/*printf("printing the graph:\n");
+	
+	CallGraph::iterator it5 = callGraph.begin();
+	while(it5 != callGraph.end()){		//over every scope
+		set<int> scopeMethods2 = it5->second;
+		int scopeInteger = it5->first;
+		printf("Scope: %s\n",hashIntToString(scopeInteger).c_str());
+		//calculate pair support within the scope in while loop, add it to the pair support table
+		for(set<int>::iterator it7 = scopeMethods2.begin();it7!=scopeMethods2.end(); ++it7){	//iterate over all methods		
+			int method1 = *it7;
+			printf("method: %s\n", hashIntToString(method1).c_str());
+		}
+		
+		it5++;
+	}*/
+	
+	
 	
 	//analyze graph with our knowledge of support
 	CallGraph::iterator it5 = callGraph.begin();
