@@ -23,7 +23,7 @@ CXXFLAGS="$(CFLAGS)"
 #CLASS_FILES=$(CLASSES:$(SRC)/%.java=$(BIN)/%.class)
 
 all:
-	$(CXX) pipair.cc -o pipairBinary
+	$(CXX) pipair.cpp -o pipairBinary
 	#./pipair test1/hello.c 3 65 
 	#$(TARGET) outputs
 	

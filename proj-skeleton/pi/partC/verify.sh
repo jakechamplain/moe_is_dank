@@ -18,7 +18,7 @@ function verifyTest() {
   echo -n Verifying $TESTNAME $T_SUPPORT $T_CONFIDENCE...
 
   # give 2 minutes
-  ./timeout.sh 120 make $OUT_FILE -C $TESTNAME >>$LOG 2>&1
+  ./timeout.sh 900 make $OUT_FILE -C $TESTNAME >>$LOG 2>&1
 
   RET=$?
 
