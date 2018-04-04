@@ -1,0 +1,11 @@
+bug: B in scope3, pair: (B, D), support: 5, confidence: 83.33%
+bug: D in scope2, pair: (B, D), support: 5, confidence: 83.33%
+bug: B in scope6, pair: (A, B), support: 5, confidence: 83.33%
+bug: A in scope2, pair: (A, B), support: 5, confidence: 83.33%
+bug: C in scope2, pair: (B, C), support: 3, confidence: 75.00%
+bug: D in scope6, pair: (A, D), support: 5, confidence: 83.33%
+bug: A in scope3, pair: (A, D), support: 5, confidence: 83.33%
+bug: D in scope5, pair: (C, D), support: 4, confidence: 66.67%
+bug: D in scope6, pair: (C, D), support: 4, confidence: 66.67%
+bug: A in scope3, pair: (A, C), support: 4, confidence: 66.67%
+bug: A in scope5, pair: (A, C), support: 4, confidence: 66.67%

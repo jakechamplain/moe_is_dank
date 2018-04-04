@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ -z "$3" ]; then
+	opt -print-callgraph  $1 2>&1 >/dev/null |  ../pipairBinary $2 3 65
+	exit 0
+else
+	opt -print-callgraph $1 2>&1 >/dev/null | ../pipairBinary $2 $3 $4 
+fi
